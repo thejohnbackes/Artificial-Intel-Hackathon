@@ -1,13 +1,14 @@
 {
-  "name": "Bot Work Orange",
+  "name": "BotWorkOrange",
   "version": "1.0.0",
   "description": "Bot Work Orange",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testAccessToken": "node ./server/api/v1/clarifai/methods/test.js"
   },
   "engines": {
-    "node": "5.0.x",
+    "node": "6.3.0",
     "npm": "3.3.x"
   },
   "repository": {
@@ -22,8 +23,11 @@
   "homepage": "https://github.com/phanendar/Artificial-Intel-Hackathon#readme",
   "dependencies": {
     "angular-chart.js": "^1.0.0-alpha8",
+    "axios": "^0.13.1",
+    "bluebird": "^3.4.1",
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
+    "lodash": "^4.15.0",
     "mongoose": "^4.3.4",
     "underscore": "^1.8.3"
   }
