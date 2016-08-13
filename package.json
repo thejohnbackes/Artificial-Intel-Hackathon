@@ -1,7 +1,7 @@
 {
-  "name": "Bot Work Orange",
+  "name": "Raise-Above-The-Wage",
   "version": "1.0.0",
-  "description": "Bot Work Orange",
+  "description": "Microsite for Raise above the wage.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,19 +12,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phanendar/Artificial-Intel-Hackathon.git"
+    "url": "git+https://github.com/phanendar/Raise-Above-The-Wage-Microsite.git"
   },
   "author": "KiranMollyAmelia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/phanendar/Artificial-Intel-Hackathon/issues"
+    "url": "https://github.com/phanendar/Raise-Above-The-Wage-Microsite/issues"
   },
-  "homepage": "https://github.com/phanendar/Artificial-Intel-Hackathon#readme",
+  "homepage": "https://github.com/phanendar/Raise-Above-The-Wage-Microsite#readme",
   "dependencies": {
     "angular-chart.js": "^1.0.0-alpha8",
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "mongoose": "^4.3.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "webcamjs": "^1.0.12"
   }
 }
