@@ -7,7 +7,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.use(bodyParser.json());
 
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'developement';
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var port = process.env.PORT || 3000;
 app.listen(port);
