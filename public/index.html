@@ -28,47 +28,96 @@
   </nav>
 
   <script src="https://s3-us-west-2.amazonaws.com/raise-above-the-wage/webcam.js"></script> 
+  <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-1.2.1.js"></script>
+
 
   <div id="my_camera" style="width:320px; height:240px;"></div>
-  <div id="my_result"></div>
 
   <script language="JavaScript">
+
+    Webcam.set({
+      width: 1280,
+      height: 960,
+      dest_width: 640,
+      dest_height: 480,
+      image_format: 'jpeg',
+      jpeg_quality: 90,
+      force_flash: false,
+      flip_horiz: true,
+      fps: 45
+    });
+
+    Clarifai.initialize({
+      'clientId': 'bTF0AWPKHAeNoDdhDMx0YycPPV4_Uj3ykVHinjRv',
+      'clientSecret': 'R2DBX1umd-TtUVP1_BMzInjYcerbgg2laCpsJ3KD'
+    });
     Webcam.attach( '#my_camera' );
 
 
     var arrayOfWebcamImages = [];
 
     window.setInterval(function(){
-      console.log("Take photo");
 
 
       Webcam.snap( function(data_uri) {
+        data_uri = data_uri.replace(/^data:image\/(.*);base64,/, '');
         arrayOfWebcamImages.push(data_uri);
+
+
+
+
+
+        for (i = 0; i < arrayOfWebcamImages.length; i++) { 
+
+
+          Clarifai.getTagsByImageBytes(arrayOfWebcamImages[i]).then(
+            function(r) {
+
+              console.log(r.results[0].result.tag.classes);
+
+
+
+            },
+            function(err){console.log(err)}
+            );
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
       } );
 
     }, 5000);
 
-    window.setInterval(function(){
-      console.log(arrayOfWebcamImages);
-    }, 1000);
-
-  </script> 
+  //  window.setInterval(function(){
+  //   console.log(arrayOfWebcamImages);
+  // }, 1000);
 
 
 
 
+</script> 
 
+<script src="/vendor/angular/angular.min.js"></script>
 
-  <script src="/vendor/angular/angular.min.js"></script>
+<script src="/controllers/controller.js"></script>
 
-  <script src="/controllers/controller.js"></script>
+<script src="/vendor/underscore/underscore-min.js"></script>
+<script src="/vendor/Chart.js/dist/Chart.js"></script>
+<script src="/vendor/angular-chart.js/angular-chart.min.js"></script>
+<script src="https://use.fontawesome.com/976542e6a6.js"></script>
 
-  <script src="/vendor/underscore/underscore-min.js"></script>
-  <script src="/vendor/Chart.js/dist/Chart.js"></script>
-  <script src="/vendor/angular-chart.js/angular-chart.min.js"></script>
-  <script src="https://use.fontawesome.com/976542e6a6.js"></script>
-
-  <script src="http://vjs.zencdn.net/5.10.4/video.js"></script>
+<script src="http://vjs.zencdn.net/5.10.4/video.js"></script>
 </body>
 
 </html>

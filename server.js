@@ -3,6 +3,13 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+var Clarifai = require('clarifai');
+
+Clarifai.initialize({
+	'clientId': '{clientId}',
+	'clientSecret': '{clientSecret}'
+});
+
 app.use(express.static(__dirname + "/public"));
 
 app.use(bodyParser.json());
