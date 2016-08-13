@@ -28,6 +28,8 @@
   </nav>
 
   <script src="https://s3-us-west-2.amazonaws.com/raise-above-the-wage/webcam.js"></script> 
+  <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-1.2.1.js"></script>
+
 
   <div id="my_camera" style="width:320px; height:240px;"></div>
   <div id="my_result"></div>
@@ -52,19 +54,32 @@
       console.log(arrayOfWebcamImages);
     }, 1000);
 
-  </script> 
+    Clarifai.initialize({
+      'clientId': '{4J484ZkBm2aXlHV8Dvljxt-_hYPlLd_131-zZ_6}',
+      'clientSecret': '{-4I9YOxkGYiJjAwUZ7P55Erci9NjILzJh9i-ZZp4}'
+    });
+
+    Clarifai.getTagsByImageBytes('/media/angryman.jpg').then(
+      function(r) {console.log(r)},
+      handleError
+      );
 
 
-  <script src="/vendor/angular/angular.min.js"></script>
+    </script> 
 
-  <script src="/controllers/controller.js"></script>
 
-  <script src="/vendor/underscore/underscore-min.js"></script>
-  <script src="/vendor/Chart.js/dist/Chart.js"></script>
-  <script src="/vendor/angular-chart.js/angular-chart.min.js"></script>
-  <script src="https://use.fontawesome.com/976542e6a6.js"></script>
 
-  <script src="http://vjs.zencdn.net/5.10.4/video.js"></script>
-</body>
 
-</html>
+    <script src="/vendor/angular/angular.min.js"></script>
+
+    <script src="/controllers/controller.js"></script>
+
+    <script src="/vendor/underscore/underscore-min.js"></script>
+    <script src="/vendor/Chart.js/dist/Chart.js"></script>
+    <script src="/vendor/angular-chart.js/angular-chart.min.js"></script>
+    <script src="https://use.fontawesome.com/976542e6a6.js"></script>
+
+    <script src="http://vjs.zencdn.net/5.10.4/video.js"></script>
+  </body>
+
+  </html>
