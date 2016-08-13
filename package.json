@@ -23,6 +23,7 @@
   "dependencies": {
     "angular-chart.js": "^1.0.0-alpha8",
     "body-parser": "^1.14.2",
+    "clarifai": "^1.2.1",
     "express": "^4.13.3",
     "mongoose": "^4.3.4",
     "underscore": "^1.8.3",
