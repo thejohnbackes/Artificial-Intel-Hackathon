@@ -1,0 +1,50 @@
+    <span class="col-md-6">
+          <div style="float:left;">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Race
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li ng-repeat="race in races"><a ng-click="racePicked(race,'left')">{{race}}</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Gender
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li ng-repeat="gender in genders"><a ng-click="genderPicked(gender, 'left')">{{gender}}</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </span>
+
+        <span class="col-md-6">
+
+          <div style="float:right;">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Race
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li ng-repeat="race in races"><a ng-click="racePicked(race,'right')">{{race}}</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Gender
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li ng-repeat="gender in genders"><a ng-click="genderPicked(gender, 'right')">{{gender}}</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </span>

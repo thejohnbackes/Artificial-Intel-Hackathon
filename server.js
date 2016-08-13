@@ -1,37 +1,14 @@
-var express = require('express'),
-    request = require('request'),
-    bodyParser = require('body-parser'),
-    app = express(),
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
-    appId = process.env.APP_ID;
-
-console.log(appId);
+app.use(express.static(__dirname + "/public"));
 
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/client'));
 
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'developement';
 
-app.get('/appid', function(req, res) {
-    res.send({appId: appId});
-});
-
-app.all('*', function (req, res, next) {
-
-        var targetURL = req.header('Target-URL');
-        if (!targetURL) {
-            res.send(500, { error: 'There is no Target-Endpoint header in the request' });
-            return;
-        }
-        request({ url: targetURL + req.url, method: req.method, json: req.body, headers: {'Authorization': req.header('Authorization')} },
-            function (error, response, body) {
-                if (error) {
-                    console.error('error: ' + response.statusCode)
-                }
-            }).pipe(res);
-});
-
-app.set('port', process.env.PORT || 8200);
-
-app.listen(app.get('port'), function () {
-    console.log('Proxy server listening on port ' + app.get('port'));
-});
+var port = process.env.PORT || 3000;
+app.listen(port);
+console.log("Listening on port " + port + "...");

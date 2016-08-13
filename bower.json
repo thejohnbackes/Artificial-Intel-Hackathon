@@ -1,0 +1,25 @@
+{
+  "name": "Raise-Above-The-Wage",
+  "description": "Microsite Raise-Above-The-Wage.",
+  "main": "server.js",
+  "authors": [
+    "KiranMollyAmelia"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/phanendar/Raise-Above-The-Wage-Microsite",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "angular": "1.2.29",
+    "angular-chart.js": "^0.10.2"
+  }
+}

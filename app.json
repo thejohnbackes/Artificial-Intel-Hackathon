@@ -1,7 +1,0 @@
-{
-  "name": "Salesforce Conference App",
-  "description": "Conference Management App built on Salesforce1 Platform",
-  "env": {
-    "APP_ID": ""
-  }
-}
